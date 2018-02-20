@@ -8,6 +8,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class HashCode {
+    int r,c,l,h;
+    boolean pizza[][];
 
 
     public static void main(String[] args) {
@@ -21,7 +23,6 @@ public class HashCode {
     public boolean[][] loadData() {
         File inFile = new File("in/in.txt");
 
-        int r,c,l,h;
         Scanner sc = null;
         try {
             sc = new Scanner(inFile);
@@ -34,7 +35,7 @@ public class HashCode {
         l = sc.nextInt();
         h = sc.nextInt();
 
-        boolean[][] pizza = new boolean[r][c];
+        pizza = new boolean[r][c];
 
         for(int i=0; i<r; i++){
             String line = sc.next();
