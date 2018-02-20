@@ -14,7 +14,7 @@ public class HashCode {
     boolean pizza[][];
     List<Point> possibleSizes;
     boolean[][] isUsedPosition;
-    List<Rectangle> foundRectangles;
+    List<Rectangle> foundRectangles = new LinkedList<>();
 
 
 
