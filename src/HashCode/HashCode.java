@@ -3,6 +3,7 @@ package HashCode;
 import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -24,7 +25,7 @@ public class HashCode {
 
     HashCode(){
         loadData();
-        getSizes();
+        possibleSizes = genSizes(H);
         solve();
         output();
     }
@@ -84,8 +85,19 @@ public class HashCode {
         return pizza;
     }
 
-    void getSizes() {
+    ArrayList<Point> genSizes(int h) {
+        ArrayList<Point> res = new ArrayList();
+        for (int i = 1; i <= h; i++) {
+            if (h % i == 0) {
+                Point tmp = new Point();
+                tmp.x = i;
+                tmp.y = h / i;
+                res.add(tmp);
+                //System.out.println(tmp.x + "," + tmp.y);
+            }
 
+        }
+        return res;
     }
 
     boolean isValid(Rectangle rec) {
