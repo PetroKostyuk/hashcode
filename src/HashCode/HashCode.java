@@ -24,7 +24,25 @@ public class HashCode {
 
     HashCode(){
         loadData();
-        int i;
+        getSizes();
+        solve();
+        output();
+    }
+    
+    void solve() {
+        for (int i = 0; i < R; i++) {
+            for (int j = 0; j < C; j++) {
+                for (Point p : possibleSizes) {
+                    Rectangle rect = new Rectangle(i, j, p.x, p.y);
+                    if(this.isValid(rect)) {
+                        foundRectangles.add(rect);
+                        this.fillRect(rect);
+                        break;
+                    }
+                }
+                
+            }
+        }
     }
 
     public boolean[][] loadData() {
