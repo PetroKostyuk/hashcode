@@ -23,10 +23,13 @@ public class HashCode {
 
 
     HashCode() throws IOException {
-        loadData();
-        possibleSizes = genSizes(H);
-        solve();
-        output();
+        String[] strs = {"example", "small", "medium", "big" };
+        for (String str : strs) {
+            loadData(str);
+            possibleSizes = genSizes(H);
+            solve();
+            output(str);
+        }
     }
 
     void solve() {
@@ -45,8 +48,8 @@ public class HashCode {
         }
     }
 
-    public boolean[][] loadData() {
-        File inFile = new File("in/in.txt");
+    public boolean[][] loadData(String in) {
+        File inFile = new File("in/"+in+".in");
 
         Scanner sc = null;
         try {
@@ -114,8 +117,8 @@ public class HashCode {
         return trueCount>=L && falseCount>=L;
     }
 
-    public void output() throws IOException {
-        PrintWriter fileWriter = new PrintWriter("out/out.txt");
+    public void output(String out) throws IOException {
+        PrintWriter fileWriter = new PrintWriter("out/"+out+".txt");
         fileWriter.println(foundRectangles.size());
 
         for (Rectangle rectangle : foundRectangles) {
