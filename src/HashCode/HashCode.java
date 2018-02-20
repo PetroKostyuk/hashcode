@@ -73,6 +73,6 @@ public class HashCode {
     }
     
     void output() {
-        
+        System.out.println("sdfasdfasd");
     }
 }
