@@ -3,12 +3,9 @@ package HashCode;
 import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class HashCode {
     int R, C, L, H;
@@ -20,21 +17,18 @@ public class HashCode {
 
 
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         HashCode hash = new HashCode();
     }
 
 
-    HashCode() throws FileNotFoundException {
+    HashCode(){
         loadData();
         getSizes();
         solve();
-        try {
-            output();
-        } catch (FileNotFoundException ex) {
-        }
+        output();
     }
-    
+
     void solve() {
         for (int i = 0; i < R; i++) {
             for (int j = 0; j < C; j++) {
@@ -46,7 +40,7 @@ public class HashCode {
                         break;
                     }
                 }
-                
+
             }
         }
     }
@@ -89,19 +83,36 @@ public class HashCode {
 
         return pizza;
     }
-    
+
     void getSizes() {
-        
+
     }
-    
-    void isValid() {
-        
+
+    boolean isValid(Rectangle rec) {
+        boolean valid = true;
+
+        int ex = rec.x + rec.width;
+        int ey = rec.y + rec.height;
+
+        if(ex >= C || ey >= R) return false;
+
+        boolean hasTrue = false;
+        boolean hasFalse = false;
+
+        for (int x=rec.x; x<ex; x++){
+            for(int y=rec.y; y<ey; y++){
+                if(isUsedPosition[y][x])return false;
+
+                if(pizza[y][x]) hasTrue = true;
+                else hasFalse = true;
+            }
+        }
+
+        return hasTrue && hasFalse;
     }
-    
-    public void output() throws FileNotFoundException {
-        PrintWriter outFile = new PrintWriter("out/out.txt");
+
+    public void output() {
         System.out.println(foundRectangles.size());
-        outFile.println(foundRectangles.size());
 
         for (Rectangle rectangle : foundRectangles) {
             int x1 = rectangle.x;
@@ -110,7 +121,6 @@ public class HashCode {
             int y2 = y1 + rectangle.height - 1;
 
             System.out.println(x1 + " " + y1 + " " + x2 + " " + y2);
-            outFile.println(x1 + " " + y1 + " " + x2 + " " + y2);
         }
     }
 
@@ -122,6 +132,8 @@ public class HashCode {
 
 
 
+
+
     // Pavel
 
 
@@ -130,7 +142,6 @@ public class HashCode {
 
 
     // Petro
-<<<<<<< HEAD
 
     void fillRect(Rectangle rect){
         int ex = rect.x + rect.width;
@@ -142,6 +153,4 @@ public class HashCode {
             }
         }
     }
-=======
->>>>>>> 675134ccc60e2df8782f80bdbadcbb36bb8573d2
 }
