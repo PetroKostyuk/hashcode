@@ -81,7 +81,6 @@ public class HashCode {
                 tmp.x = i;
                 tmp.y = h / i;
                 res.add(tmp);
-                //System.out.println(tmp.x + "," + tmp.y);
             }
 
         }
@@ -89,7 +88,6 @@ public class HashCode {
     }
 
     boolean isValid(Rectangle rec) {
-        System.out.println(rec);
         boolean valid = true;
 
         int ex = rec.x + rec.width;
@@ -99,8 +97,8 @@ public class HashCode {
             return false;
         }
 
-        boolean hasTrue = false;
-        boolean hasFalse = false;
+        int trueCount = 0;
+        int falseCount = 0;
 
         for (int x=rec.x; x<ex; x++){
             for(int y=rec.y; y<ey; y++){
@@ -108,18 +106,16 @@ public class HashCode {
                     return false;
                 }
 
-                if(pizza[y][x]) hasTrue = true;
-                else hasFalse = true;
+                if(pizza[y][x]) trueCount++;
+                else falseCount++;
             }
         }
 
-        System.out.println(hasTrue && hasFalse);
-        return hasTrue && hasFalse;
+        return trueCount>=L && falseCount>=L;
     }
 
     public void output() throws IOException {
         PrintWriter fileWriter = new PrintWriter("out/out.txt");
-        System.out.println(foundRectangles.size());
         fileWriter.println(foundRectangles.size());
 
         for (Rectangle rectangle : foundRectangles) {
@@ -128,7 +124,6 @@ public class HashCode {
             int x2 = x1 + rectangle.width - 1;
             int y2 = y1 + rectangle.height - 1;
 
-            System.out.println(y1 + " " + x1 + " " + y2 + " " + x2);
             fileWriter.println(y1 + " " + x1 + " " + y2 + " " + x2);
 
         }
