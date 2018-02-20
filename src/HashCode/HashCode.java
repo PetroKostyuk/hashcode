@@ -3,6 +3,7 @@ package HashCode;
 import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -17,7 +18,7 @@ public class HashCode {
 
 
     public static void main(String[] args) {
-        new HashCode();
+        HashCode hash = new HashCode();
     }
 
 
@@ -73,8 +74,17 @@ public class HashCode {
         
     }
     
-    void output() {
-        System.out.println("sdfasdfasd");
+    public void output() {
+        System.out.println(foundRectangles.size());
+
+        for (Rectangle rectangle : foundRectangles) {
+            int x1 = rectangle.x;
+            int y1 = rectangle.y;
+            int x2 = x1 + rectangle.width - 1;
+            int y2 = y1 + rectangle.height - 1;
+
+            System.out.println(x1 + " " + y1 + " " + x2 + " " + y2);
+        }
     }
 
     // Denys
