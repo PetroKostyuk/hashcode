@@ -34,7 +34,7 @@ public class HashCode {
         for (int i = 0; i < R; i++) {
             for (int j = 0; j < C; j++) {
                 for (Point p : possibleSizes) {
-                    Rectangle rect = new Rectangle(i, j, p.x, p.y);
+                    Rectangle rect = new Rectangle(j, i, p.x, p.y);
                     if(this.isValid(rect)) {
                         foundRectangles.add(rect);
                         this.fillRect(rect);
@@ -90,6 +90,7 @@ public class HashCode {
     }
 
     boolean isValid(Rectangle rec) {
+        System.out.println(rec);
         boolean valid = true;
 
         int ex = rec.x + rec.width;
@@ -113,6 +114,7 @@ public class HashCode {
             }
         }
 
+        System.out.println(hasTrue && hasFalse);
         return hasTrue && hasFalse;
     }
 
