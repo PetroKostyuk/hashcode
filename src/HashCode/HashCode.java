@@ -5,4 +5,8 @@ public class HashCode {
         System.out.println("Helloo!!!");
         System.out.println("Hop (milicpav) is in!");
     }
+
+    public static void sp2(){
+
+    }
 }
