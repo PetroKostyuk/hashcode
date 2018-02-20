@@ -22,6 +22,7 @@ public class HashCode {
 
     HashCode(){
         loadData();
+        int i;
     }
 
     public boolean[][] loadData() {
