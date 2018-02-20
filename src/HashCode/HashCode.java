@@ -144,11 +144,11 @@ public class HashCode {
     // Petro
 
     void fillRect(Rectangle rect){
-        int ex = rec.x + rec.width;
-        int ey = rec.y + rec.height;
+        int ex = rect.x + rect.width;
+        int ey = rect.y + rect.height;
 
-        for (int x=rec.x; x<ex; x++){
-            for(int y=rec.y; y<ey; y++){
+        for (int x=rect.x; x<ex; x++){
+            for(int y=rect.y; y<ey; y++){
                 isUsedPosition[y][x] = true;
             }
         }
