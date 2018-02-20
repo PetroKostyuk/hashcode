@@ -120,7 +120,7 @@ public class HashCode {
             int x2 = x1 + rectangle.width - 1;
             int y2 = y1 + rectangle.height - 1;
 
-            System.out.println(x1 + " " + y1 + " " + x2 + " " + y2);
+            System.out.println(y1 + " " + x1 + " " + y2 + " " + x2);
         }
     }
 
