@@ -3,6 +3,7 @@ package HashCode;
 import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -92,8 +93,10 @@ public class HashCode {
         
     }
     
-    public void output() {
+    public void output() throws FileNotFoundException {
+        PrintWriter outFile = new PrintWriter("out/out.txt");
         System.out.println(foundRectangles.size());
+        outFile.println(foundRectangles.size());
 
         for (Rectangle rectangle : foundRectangles) {
             int x1 = rectangle.x;
@@ -102,6 +105,7 @@ public class HashCode {
             int y2 = y1 + rectangle.height - 1;
 
             System.out.println(x1 + " " + y1 + " " + x2 + " " + y2);
+            outFile.println(x1 + " " + y1 + " " + x2 + " " + y2);
         }
     }
 
@@ -110,8 +114,6 @@ public class HashCode {
 
 
     // Michal
-
-
 
 
 
