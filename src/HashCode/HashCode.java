@@ -62,6 +62,7 @@ public class HashCode {
         H = sc.nextInt();
 
         pizza = new boolean[R][C];
+        isUsedPosition = new boolean[R][C];
 
         for(int i = 0; i< R; i++){
             String line = sc.next();
