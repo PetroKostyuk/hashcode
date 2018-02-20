@@ -64,7 +64,7 @@ public class HashCode {
         return pizza;
     }
     
-     void getSizes() {
+    void getSizes() {
         
     }
     
