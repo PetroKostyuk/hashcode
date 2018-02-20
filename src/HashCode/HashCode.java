@@ -71,18 +71,6 @@ public class HashCode {
             }
         }
 
-        System.out.println(R);
-        System.out.println(C);
-
-
-        for(int i = 0; i< R; i++) {
-            for (int j = 0; j < C; j++) {
-                System.out.print(pizza[i][j]);
-                System.out.print(" ");
-            }
-            System.out.println(" ");
-        }
-
         return pizza;
     }
 
