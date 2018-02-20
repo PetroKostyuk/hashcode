@@ -20,12 +20,12 @@ public class HashCode {
 
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         HashCode hash = new HashCode();
     }
 
 
-    HashCode(){
+    HashCode() throws FileNotFoundException {
         loadData();
         getSizes();
         solve();
@@ -94,27 +94,8 @@ public class HashCode {
         
     }
     
-    boolean isValid(Rectangle rec) {
-        boolean valid = true;
-
-        int ex = rec.x + rec.width;
-        int ey = rec.y + rec.height;
-
-        if(ex >= C || ey >= R) return false;
-
-        boolean hasTrue = false;
-        boolean hasFalse = false;
-
-        for (int x=rec.x; x<ex; x++){
-            for(int y=rec.y; y<ey; y++){
-                if(isUsedPosition[y][x])return false;
-
-                if(pizza[y][x]) hasTrue = true;
-                else hasFalse = true;
-            }
-        }
-
-        return hasTrue && hasFalse;
+    void isValid() {
+        
     }
     
     public void output() throws FileNotFoundException {
@@ -149,6 +130,7 @@ public class HashCode {
 
 
     // Petro
+<<<<<<< HEAD
 
     void fillRect(Rectangle rect){
         int ex = rect.x + rect.width;
@@ -160,4 +142,6 @@ public class HashCode {
             }
         }
     }
+=======
+>>>>>>> 675134ccc60e2df8782f80bdbadcbb36bb8573d2
 }
