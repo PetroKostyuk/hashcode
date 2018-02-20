@@ -7,6 +7,8 @@ import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class HashCode {
     int R, C, L, H;
@@ -27,7 +29,10 @@ public class HashCode {
         loadData();
         getSizes();
         solve();
-        output();
+        try {
+            output();
+        } catch (FileNotFoundException ex) {
+        }
     }
     
     void solve() {
