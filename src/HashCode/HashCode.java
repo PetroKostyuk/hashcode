@@ -130,6 +130,8 @@ public class HashCode {
 
             System.out.println(y1 + " " + x1 + " " + y2 + " " + x2);
             fileWriter.println(y1 + " " + x1 + " " + y2 + " " + x2);
+
+            fileWriter.close();
         }
     }
 
