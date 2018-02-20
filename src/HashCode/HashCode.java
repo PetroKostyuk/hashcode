@@ -1,16 +1,13 @@
 package HashCode;
 
 import java.awt.*;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class HashCode {
-    int R,C,L,H;
+    int R, C, L, H;
 
     boolean pizza[][];
     List<Point> possibleSizes;
@@ -37,26 +34,26 @@ public class HashCode {
             e.printStackTrace();
         }
 
-        r = sc.nextInt();
-        c = sc.nextInt();
-        l = sc.nextInt();
-        h = sc.nextInt();
+        R = sc.nextInt();
+        C = sc.nextInt();
+        L = sc.nextInt();
+        H = sc.nextInt();
 
-        pizza = new boolean[r][c];
+        pizza = new boolean[R][C];
 
-        for(int i=0; i<r; i++){
+        for(int i = 0; i< R; i++){
             String line = sc.next();
-            for(int j=0; j<c; j++){
+            for(int j = 0; j< C; j++){
                 pizza[i][j] = line.charAt(j)=='T';
             }
         }
 
-        System.out.println(r);
-        System.out.println(c);
+        System.out.println(R);
+        System.out.println(C);
 
 
-        for(int i=0; i<r; i++) {
-            for (int j = 0; j < c; j++) {
+        for(int i = 0; i< R; i++) {
+            for (int j = 0; j < C; j++) {
                 System.out.print(pizza[i][j]);
                 System.out.print(" ");
             }
