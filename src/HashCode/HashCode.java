@@ -1,15 +1,22 @@
 package HashCode;
 
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class HashCode {
-    int r,c,l,h;
+    int R,C,L,H;
+
     boolean pizza[][];
+    List<Point> possibleSizes;
+    boolean[][] isUsedPosition;
+    List<Rectangle> foundRectangles;
+
 
 
     public static void main(String[] args) {
