@@ -1,8 +1,7 @@
 package HashCode;
 
 import java.awt.*;
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,12 +17,12 @@ public class HashCode {
 
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         HashCode hash = new HashCode();
     }
 
 
-    HashCode(){
+    HashCode() throws IOException {
         loadData();
         possibleSizes = genSizes(H);
         solve();
@@ -118,8 +117,10 @@ public class HashCode {
         return hasTrue && hasFalse;
     }
 
-    public void output() {
+    public void output() throws IOException {
+        PrintWriter fileWriter = new PrintWriter("out/out.txt");
         System.out.println(foundRectangles.size());
+        fileWriter.println(foundRectangles.size());
 
         for (Rectangle rectangle : foundRectangles) {
             int x1 = rectangle.x;
@@ -128,6 +129,7 @@ public class HashCode {
             int y2 = y1 + rectangle.height - 1;
 
             System.out.println(y1 + " " + x1 + " " + y2 + " " + x2);
+            fileWriter.println(y1 + " " + x1 + " " + y2 + " " + x2);
         }
     }
 
