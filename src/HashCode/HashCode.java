@@ -23,16 +23,20 @@ public class HashCode {
 
     HashCode(){
         loadData();
+        getSizes();
         solve();
+        output();
     }
     
     void solve() {
-        List<Point> rect = this.getSizes();
         for (int i = 0; i < R; i++) {
             for (int j = 0; j < C; j++) {
-                for (Point p : rect) {
-                    if(this.isValid()) {
-                        
+                for (Point p : possibleSizes) {
+                    Rectangle rect = new Rectangle(i, j, p.x, p.y);
+                    if(this.isValid(rect)) {
+                        foundRectangles.add(rect);
+                        this.fillRect(rect);
+                        break;
                     }
                 }
                 
