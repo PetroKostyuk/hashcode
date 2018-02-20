@@ -20,6 +20,7 @@ public class HashCode {
         new HashCode();
     }
 
+
     HashCode(){
         loadData();
         int i;
@@ -75,4 +76,23 @@ public class HashCode {
     void output() {
         System.out.println("sdfasdfasd");
     }
+
+    // Denys
+
+
+
+    // Michal
+
+
+
+
+
+    // Pavel
+
+
+
+
+
+
+    // Petro
 }
