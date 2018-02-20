@@ -7,6 +7,8 @@ import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class HashCode {
     int R, C, L, H;
@@ -27,7 +29,10 @@ public class HashCode {
         loadData();
         getSizes();
         solve();
-        output();
+        try {
+            output();
+        } catch (FileNotFoundException ex) {
+        }
     }
     
     void solve() {
@@ -125,4 +130,18 @@ public class HashCode {
 
 
     // Petro
+<<<<<<< HEAD
+
+    void fillRect(Rectangle rect){
+        int ex = rect.x + rect.width;
+        int ey = rect.y + rect.height;
+
+        for (int x=rect.x; x<ex; x++){
+            for(int y=rect.y; y<ey; y++){
+                isUsedPosition[y][x] = true;
+            }
+        }
+    }
+=======
+>>>>>>> 675134ccc60e2df8782f80bdbadcbb36bb8573d2
 }
