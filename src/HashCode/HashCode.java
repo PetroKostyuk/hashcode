@@ -23,7 +23,21 @@ public class HashCode {
 
     HashCode(){
         loadData();
-        int i;
+        solve();
+    }
+    
+    void solve() {
+        List<Point> rect = this.getSizes();
+        for (int i = 0; i < R; i++) {
+            for (int j = 0; j < C; j++) {
+                for (Point p : rect) {
+                    if(this.isValid()) {
+                        
+                    }
+                }
+                
+            }
+        }
     }
 
     public boolean[][] loadData() {
