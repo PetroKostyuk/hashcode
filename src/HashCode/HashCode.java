@@ -95,14 +95,18 @@ public class HashCode {
         int ex = rec.x + rec.width;
         int ey = rec.y + rec.height;
 
-        if(ex >= C || ey >= R) return false;
+        if(ex > C || ey > R){
+            return false;
+        }
 
         boolean hasTrue = false;
         boolean hasFalse = false;
 
         for (int x=rec.x; x<ex; x++){
             for(int y=rec.y; y<ey; y++){
-                if(isUsedPosition[y][x])return false;
+                if(isUsedPosition[y][x]){
+                    return false;
+                }
 
                 if(pizza[y][x]) hasTrue = true;
                 else hasFalse = true;
