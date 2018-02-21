@@ -27,11 +27,15 @@ public class Framework {
             String baseName = fileIn.getName();
             File fileOut = new File(directoryOut+"/"+baseName+".out");
 
-            process(fileIn, fileOut);
+            try {
+                process(fileIn, fileOut);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    public void process(File fileIn, File fileOut){
+    public void process(File fileIn, File fileOut) throws Exception{
         // Load data, solve data, save data. Piece of cake, right?
 
         // load data
