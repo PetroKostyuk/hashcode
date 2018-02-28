@@ -13,9 +13,9 @@ public class Loader {
         Data data = new Data();
 
         // TODO: during competition
-        log.write("Loading data from file:");
-        log.write(file);
-        log.write();
+        log.log("Loading data from file:");
+        log.log(file);
+        log.log();
 
         return data;
     }

@@ -8,8 +8,8 @@ public class Solver {
     public void solve(Data data){
 
         // TODO: to do all, actually :P
-        log.write("Doing some magic!");
-        log.write();
+        log.log("Doing some magic!");
+        log.log();
 
     }
 }

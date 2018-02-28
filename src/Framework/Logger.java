@@ -7,11 +7,11 @@ public class Logger {
         this.log = log;
     }
 
-    public void write(){
-        write("");
+    public void log(){
+        log("");
     }
 
-    public void write(Object o){
+    public void log(Object o){
         if(log) {
             System.out.println(o);
         }

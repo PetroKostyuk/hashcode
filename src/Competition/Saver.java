@@ -10,9 +10,9 @@ public class Saver {
     public void save(File file, Data data){
 
         // TODO: save data to file
-        log.write("Saving data to file:");
-        log.write(file);
-        log.write();
+        log.log("Saving data to file:");
+        log.log(file);
+        log.log();
 
     }
 }
