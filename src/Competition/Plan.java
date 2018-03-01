@@ -36,6 +36,14 @@ public class Plan {
             if(indbest == -1) break;
             
             plan.add(indbest);
+
+            /// update time and position
+            t += Utils.dist(p, data.rides.get(indbest).pos1);
+            if(t < data.rides.get(indbest).s) {
+                t += (data.rides.get(indbest).s - t);
+            }
+            t += data.rides.get(indbest).dist;
+            p = data.rides.get(indbest).pos2;
             data.rides.remove(indbest);
         }
         
