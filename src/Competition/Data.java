@@ -17,7 +17,7 @@ public class Data {
     static Logger logger = new Logger(true);
 
     public List<Ride> rides; // sorted by lastStart
-    public List<List<Integer>> assigenedRides;
+    public List<List<Integer>> assignedRides;
     public int simulationTime;
     public int vehiclesCount;
     public int bonus;
