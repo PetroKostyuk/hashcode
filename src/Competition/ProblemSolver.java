@@ -2,6 +2,8 @@ package Competition;
 
 import Framework.Logger;
 
+import java.util.List;
+
 public class ProblemSolver {
     Logger log = new Logger(true);
 
@@ -11,10 +13,10 @@ public class ProblemSolver {
      * @param data Data
      */
     public void solve(Data data){
-
-        // TODO: to do all, actually :P
-        log.log("Doing some magic!");
-        log.log();
-
+        for (int car = 0; car < data.vehiclesCount; car++) {
+            Plan plan = new Plan();
+            List<Integer> carRides = plan.make(data);
+            data.assignedRides.add(carRides)
+        }
     }
 }

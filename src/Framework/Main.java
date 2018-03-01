@@ -19,7 +19,7 @@ public class Main {
                 "data/out/example.out"
         };
 
-        new ProblemRunner("data/in", "data/out", new ProblemSolver());
-//        new ProblemRunner(inputFiles, outputFiles, new ProblemSolver());
+//        new ProblemRunner("data/in", "data/out", new ProblemSolver());
+        new ProblemRunner(inputFiles, outputFiles, new ProblemSolver());
     }
 }
