@@ -15,16 +15,18 @@ public class Payoff {
         }
 
         // too late
-        int availableAtStart = Utils.dist(carPosition, ride.pos1) + timestep;
-        if (availableAtStart > ride.lastStart) {
+        int timeConsumed = Utils.dist(carPosition, ride.pos1) + ride.dist;
+
+        int carAvailableAtStart = timeConsumed + timestep;
+        if (carAvailableAtStart > ride.lastStart) {
             return null;
         }
 
         // too early at the start
-        if (availableAtStart < ride.s) {
-            payoff -= ride.s - availableAtStart;
+        if (carAvailableAtStart < ride.s) {
+            timeConsumed += ride.s - carAvailableAtStart;
         }
 
-        return payoff;
+        return payoff/timeConsumed;
     }
 }
