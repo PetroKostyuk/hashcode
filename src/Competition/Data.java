@@ -5,6 +5,8 @@ import Framework.Logger;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -12,8 +14,14 @@ import java.util.Scanner;
  * Use 'public' modifier for them all.
  */
 public class Data {
-    static Logger logger = new Logger(true); 
-    public String deleteMe = ":P";
+    static Logger logger = new Logger(true);
+
+    public List<Ride> rides; // sorted by lastStart
+    public List<List<Integer>> assigenedRides;
+    public int simulationTime;
+    public int vehiclesCount;
+    public int bonus;
+
 
     public static Data read(File file) throws IOException{
         Scanner sc = new Scanner(file);
@@ -23,6 +31,10 @@ public class Data {
         logger.log("Loading data from file:");
         logger.log(file);
         logger.log();
+
+        data.rides = new List<Ride>();
+        data.assigenedRides = new LinkedList<>();
+
 
         return data;
     }
