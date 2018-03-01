@@ -5,7 +5,8 @@ public class Car {
     int timeAvailable;
 
     public Car(){
-        position
+        position = new Pos(0,0);
+        timeAvailable = 0;
 
     }
 
@@ -16,7 +17,17 @@ public class Car {
     }
 
     public Ride findRide(Data data){
-        return null;
+        int pCurr;
+        int pMax = Integer.MIN_VALUE;
+        Ride rideMax = null;
+        for (Ride currRide : data.rides){
+            pCurr = Payoff.compute(data, currRide, this.position, timeAvailable);
+            if (pCurr > pMax){
+                pMax = pCurr;
+                rideMax = currRide;
+            }
+        }
+        return rideMax;
     }
 
 }
