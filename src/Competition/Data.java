@@ -15,6 +15,10 @@ public class Data {
     static Logger logger = new Logger(true); 
     public String deleteMe = ":P";
 
+
+
+
+
     public static Data read(File file) throws IOException{
         Scanner sc = new Scanner(file);
         Data data = new Data();
