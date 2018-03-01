@@ -35,7 +35,7 @@ public class ProblemRunner {
         List<File> outputFiles = new LinkedList<>();
 
         for (File inputFile : inputFiles) {
-            outputFiles.add(new File(outputDirectoryName + inputFile.getName() + ".out"));
+            outputFiles.add(new File(outputDirectoryName + "/" + inputFile.getName() + ".out"));
         }
 
         solve(inputFiles, outputFiles, problemSolver);
