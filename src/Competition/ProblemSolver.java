@@ -16,7 +16,7 @@ public class ProblemSolver {
         for (int car = 0; car < data.vehiclesCount; car++) {
             Plan plan = new Plan();
             List<Integer> carRides = plan.make(data);
-            data.assignedRides.add(carRides)
+            data.assignedRides.add(carRides);
         }
     }
 }
