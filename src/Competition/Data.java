@@ -15,7 +15,7 @@ import java.util.Scanner;
  * Use 'public' modifier for them all.
  */
 public class Data {
-    static Logger logger = new Logger(true);
+    static Logger logger = new Logger(false);
 
     public List<Ride> rides; // sorted by lastStart
     public List<List<Integer>> assignedRides;
@@ -40,9 +40,9 @@ public class Data {
         Data data = new Data();
 
         // TODO: during competition
-        logger.log("Loading data from file:");
-        logger.log(file);
-        logger.log();
+        System.out.println("Loading data from file:");
+        System.out.println(file);
+        System.out.println();
 
         sc.nextInt();
         sc.nextInt();
