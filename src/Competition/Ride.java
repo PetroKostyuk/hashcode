@@ -17,6 +17,6 @@ public class Ride implements Comparable {
     
     @Override
     public int compareTo(Object o) {
-        return -(this.lastStart - ((Ride)o).lastStart);
+        return (this.lastStart - ((Ride)o).lastStart);
     }
 }
