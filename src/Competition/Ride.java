@@ -1,9 +1,9 @@
 package Competition;
 
 public class Ride {
-    int index, s, f, dist, lastStart;
-    Pos pos1;
-    Pos pos2;
+    public int index, s, f, dist, lastStart;
+    public Pos pos1;
+    public Pos pos2;
 
 
     public Ride(int index, int r1, int c1, int r2, int c2, int s, int f){

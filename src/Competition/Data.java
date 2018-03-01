@@ -4,6 +4,7 @@ import Framework.Logger;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
@@ -51,6 +52,15 @@ public class Data {
         logger.log();
 
         FileWriter fw = new FileWriter(file);
+        BufferedWriter bw = new BufferedWriter(fw);
+        for (int i = 0; i < assignedRides.size(); i++){
+            for (int j = 0; j < assignedRides.get(i).size(); j++){
+                bw.write(assignedRides.get(i).get(j));
+            }
+            bw.write("\n");
+
+        }
+        bw.close();
         fw.close();
     }
 }
