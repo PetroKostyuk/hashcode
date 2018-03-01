@@ -21,12 +21,19 @@ public class Data {
     public List<List<Integer>> assignedRides;
     public int simulationTime;
     public int vehiclesCount;
+    public int ridesCount;
     public int bonus;
 
-
-
-
-
+    public void logAll(){
+        logger.log("simulationTime: " + simulationTime);
+        logger.log("vehiclesCount: " + vehiclesCount);
+        logger.log("ridesCount: " + ridesCount);
+        logger.log("bonus: " + bonus);
+        logger.log("rides:");
+        for(int i=0; i<rides.size(); i++){
+            logger.log(rides.get(i).toString());
+        }
+    }
 
     public static Data read(File file) throws IOException{
         Scanner sc = new Scanner(file);
@@ -37,9 +44,27 @@ public class Data {
         logger.log(file);
         logger.log();
 
-        data.rides = new List<Ride>();
-        data.assigenedRides = new LinkedList<>();
+        sc.nextInt();
+        sc.nextInt();
+        data.vehiclesCount = sc.nextInt();
+        data.ridesCount = sc.nextInt();
+        data.bonus = sc.nextInt();
+        data.simulationTime = sc.nextInt();
 
+        data.rides = new LinkedList<>();
+        for(int i=0; i<data.ridesCount; i++){
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            int s = sc.nextInt();
+            int f = sc.nextInt();
+            data.rides.add(new Ride(i, a, b, x, y, s, f));
+        }
+
+        data.assignedRides = new LinkedList<>();
+
+        data.logAll();
 
         return data;
     }
