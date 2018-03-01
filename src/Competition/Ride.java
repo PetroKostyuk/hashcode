@@ -1,6 +1,6 @@
 package Competition;
 
-public class Ride {
+public class Ride implements Comparable {
     int index, s, f, dist, lastStart;
     Pos pos1;
     Pos pos2;
@@ -14,5 +14,10 @@ public class Ride {
         this.f = f;
         this.dist = Math.abs(r1 - r2) + Math.abs(c1 - c2);
         this.lastStart = f - dist;
+    }
+    
+    @Override
+    public int compareTo(Object o) {
+        return -(this.lastStart - ((Ride)o).lastStart);
     }
 }
