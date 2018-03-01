@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ProblemSolver2 {
+public class ProblemSolver2 extends ProblemSolver{
     Logger log = new Logger(true);
 
     /**
@@ -20,6 +20,7 @@ public class ProblemSolver2 {
         List<Car> cars = new LinkedList<>();
         for(int i=0; i<data.vehiclesCount; i++){
             cars.add(new Car());
+            data.assignedRides.add(new LinkedList<>());
         }
 
         boolean done = false;

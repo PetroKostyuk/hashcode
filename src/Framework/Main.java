@@ -1,6 +1,7 @@
 package Framework;
 
 import Competition.ProblemSolver;
+import Competition.ProblemSolver2;
 import Framework.Logger;
 import Framework.ProblemRunner;
 
@@ -20,7 +21,7 @@ public class Main {
                 "data/out/e_high_bonus.out"
         };
 
-//        new ProblemRunner("data/in", "data/out", new ProblemSolver());
-        new ProblemRunner(inputFiles, outputFiles, new ProblemSolver());
+        new ProblemRunner("data/in", "data/out", new ProblemSolver2());
+//        new ProblemRunner(inputFiles, outputFiles, new ProblemSolver2());
     }
 }

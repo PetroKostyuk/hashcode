@@ -17,12 +17,12 @@ public class Car {
     }
 
     public Ride findRide(Data data){
-        int pCurr;
+        Integer pCurr;
         int pMax = Integer.MIN_VALUE;
         Ride rideMax = null;
         for (Ride currRide : data.rides){
             pCurr = Payoff.compute(data, currRide, this.position, timeAvailable);
-            if (pCurr > pMax){
+            if (pCurr != null && pCurr > pMax){
                 pMax = pCurr;
                 rideMax = currRide;
             }
