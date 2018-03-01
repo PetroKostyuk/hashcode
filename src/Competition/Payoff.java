@@ -27,6 +27,6 @@ public class Payoff {
             timeConsumed += ride.s - carAvailableAtStart;
         }
 
-        return payoff/timeConsumed;
+        return 1000*payoff/timeConsumed;
     }
 }
