@@ -7,7 +7,7 @@ public class Payoff {
 
     public static Integer compute(Data data, Ride ride, Pos carPosition, int timestep) {
         // distance reward
-        int payoff = - ride.dist;
+        int payoff = - 10 * ride.dist;
 
         // bonus
         if (timestep == ride.s) {
