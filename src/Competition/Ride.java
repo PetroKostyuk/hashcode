@@ -1,5 +1,5 @@
 package Competition;
-package Math;
+
 public class Ride {
     int index, s, f, dist, lastStart;
     Pos pos1;
