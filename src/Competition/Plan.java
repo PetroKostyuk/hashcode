@@ -30,6 +30,7 @@ public class Plan {
                    int iv = i;
                    if(iv > vbest) {
                        vbest = iv;
+                       indbest = r.index;
                    }
                }
             }
