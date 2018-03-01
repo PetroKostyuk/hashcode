@@ -27,7 +27,17 @@ public class Car {
                 rideMax = currRide;
             }
         }
+        /// update time and position
+        timeAvailable += Utils.dist(position, rideMax.pos1);
+        if(timeAvailable < rideMax.s) {
+            timeAvailable += (rideMax.s - timeAvailable);
+        }
+        timeAvailable += rideMax.dist;
+        position = rideMax.pos2;
+
         return rideMax;
+        
+
     }
 
 }
