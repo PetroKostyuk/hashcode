@@ -23,10 +23,11 @@ public class Payoff {
         }
 
         // too early at the start
+        int waitingTime = 0;
         if (carAvailableAtStart < ride.s) {
-            distToStart += ride.s - carAvailableAtStart;
+            waitingTime = ride.s - carAvailableAtStart;
         }
 
-        return payoff - distToStart;
+        return payoff - distToStart - waitingTime;
     }
 }
