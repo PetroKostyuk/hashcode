@@ -12,11 +12,12 @@ public class Main {
         Logger.MAIN_VERBOSITY = true;
 
         String[] inputFiles = {
-                "data/in/a_example.in"
+//                "data/in/b_should_be_easy.in"
+                "data/in/e_high_bonus.in"
         };
 
         String[] outputFiles = {
-                "data/out/a_example.out"
+                "data/out/e_high_bonus.out"
         };
 
 //        new ProblemRunner("data/in", "data/out", new ProblemSolver());
