@@ -62,9 +62,6 @@ public class Data {
         }
 
         data.assignedRides = new LinkedList<>();
-        for(int i=0; i<data.vehiclesCount; i++){
-            data.assignedRides.add(new LinkedList<>());
-        }
 
         data.logAll();
 
