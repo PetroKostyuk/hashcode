@@ -31,7 +31,14 @@ public class ProblemRunner {
     }
 
     public ProblemRunner(String inputDirectoryName, String outputDirectoryName, ProblemSolver problemSolver) throws IOException {
-        solve(loadFilesInDirectory(inputDirectoryName), loadFilesInDirectory(outputDirectoryName), problemSolver);
+        List<File> inputFiles = loadFilesInDirectory(inputDirectoryName);
+        List<File> outputFiles = new LinkedList<>();
+
+        for (File inputFile : inputFiles) {
+            outputFiles.add(new File(outputDirectoryName + inputFile.getName() + ".out"));
+        }
+
+        solve(inputFiles, outputFiles, problemSolver);
     }
 
     private List<File> loadFilesInDirectory(String directoryName) throws IOException {
