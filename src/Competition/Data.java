@@ -79,8 +79,9 @@ public class Data {
         FileWriter fw = new FileWriter(file);
         BufferedWriter bw = new BufferedWriter(fw);
         for (int i = 0; i < assignedRides.size(); i++){
+            bw.write(new Integer(assignedRides.get(i).size()).toString());
             for (int j = 0; j < assignedRides.get(i).size(); j++){
-                bw.write(assignedRides.get(i).get(j).toString()+" ");
+                bw.write(" " +assignedRides.get(i).get(j).toString());
             }
             bw.write("\n");
 
