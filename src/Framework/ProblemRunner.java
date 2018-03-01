@@ -67,8 +67,6 @@ public class ProblemRunner {
             File inputFile = inputFiles.get(i);
             File outputFile = outputFiles.get(i);
 
-            Logger.verbose("Starting solver for: " + inputFile.getName());
-
             Data data = Data.read(inputFile);
             problemSolver.solve(data);
             data.write(outputFile);

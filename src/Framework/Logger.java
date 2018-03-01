@@ -17,14 +17,4 @@ public class Logger {
             System.out.println(o);
         }
     }
-
-    public static void verbose(Object o) {
-        if(MAIN_VERBOSITY) {
-            System.out.println(o);
-        }
-    }
-
-    public static void verbose() {
-        Logger.verbose("");
-    }
 }

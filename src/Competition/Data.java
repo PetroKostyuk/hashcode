@@ -12,6 +12,7 @@ import java.util.Scanner;
  * Use 'public' modifier for them all.
  */
 public class Data {
+    static Logger logger = new Logger(true); 
     public String deleteMe = ":P";
 
     public static Data read(File file) throws IOException{
@@ -19,9 +20,9 @@ public class Data {
         Data data = new Data();
 
         // TODO: during competition
-        Logger.verbose("Loading data from file:");
-        Logger.verbose(file);
-        Logger.verbose();
+        logger.log("Loading data from file:");
+        logger.log(file);
+        logger.log();
 
         return data;
     }
@@ -29,9 +30,9 @@ public class Data {
     public void write(File file) throws IOException {
         // TODO: here the file is created and written into
 
-        Logger.verbose("Saving data to file:");
-        Logger.verbose(file);
-        Logger.verbose();
+        logger.log("Saving data to file:");
+        logger.log(file);
+        logger.log();
 
         FileWriter fw = new FileWriter(file);
         fw.close();
