@@ -18,25 +18,26 @@ public class Plan {
         List<Integer> plan = new ArrayList<>();
         boolean[] feas = new boolean[data.rides.size()];
         Arrays.fill(feas, true);
-        int vbest = Integer.MIN_VALUE;
-        int indbest = -1;
         while(true) {
-            for (Ride r : data.rides) {
-               if(!feas[r.index]) continue;
-               Integer i = Payoff.compute(data, r, p, t);
-               if(i == null) {
-                   feas[r.index] = false;
-               } else {
-                   int iv = i;
-                   if(iv > vbest) {
-                       vbest = iv;
-                       indbest = r.index;
-                   }
-               }
+            int vbest = Integer.MIN_VALUE;
+            int indbest = -1;
+            for (int indRide = 0; indRide < data.rides.size(); indRide++) {
+                Ride r = data.rides.get(indRide);
+                if(!feas[indRide]) continue;
+                Integer i = Payoff.compute(data, r, p, t);
+                if(i == null) {
+                    feas[indRide] = false;
+                } else {
+                    int iv = i;
+                    if(iv > vbest) {
+                        vbest = iv;
+                        indbest = indRide;
+                    }
+                }
             }
             if(indbest == -1) break;
             
-            plan.add(indbest);
+            plan.add(data.rides.get(indbest).index);
 
             /// update time and position
             t += Utils.dist(p, data.rides.get(indbest).pos1);
