@@ -3,6 +3,7 @@ package Competition;
 import Framework.Logger;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -32,5 +33,7 @@ public class Data {
         Logger.verbose(file);
         Logger.verbose();
 
+        FileWriter fw = new FileWriter(file);
+        fw.close();
     }
 }
