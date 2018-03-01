@@ -80,7 +80,7 @@ public class Data {
         BufferedWriter bw = new BufferedWriter(fw);
         for (int i = 0; i < assignedRides.size(); i++){
             for (int j = 0; j < assignedRides.get(i).size(); j++){
-                bw.write(assignedRides.get(i).get(j));
+                bw.write(assignedRides.get(i).get(j).toString()+" ");
             }
             bw.write("\n");
 
