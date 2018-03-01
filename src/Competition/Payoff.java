@@ -7,15 +7,15 @@ public class Payoff {
 
     public static Integer compute(Data data, Ride ride, Pos carPosition, int timestep) {
         // distance reward
-        int payoff = ride.dist;
+        int payoff = - ride.dist;
 
         // bonus
         if (timestep == ride.s) {
             payoff += data.bonus;
         }
 
-        // too late
-        int timeConsumed = Utils.dist(carPosition, ride.pos1) + ride.dist;
+        int distToStart = Utils.dist(carPosition, ride.pos1);
+        int timeConsumed = distToStart + ride.dist;
 
         int carAvailableAtStart = timeConsumed + timestep;
         if (carAvailableAtStart > ride.lastStart) {
@@ -24,9 +24,9 @@ public class Payoff {
 
         // too early at the start
         if (carAvailableAtStart < ride.s) {
-            timeConsumed += ride.s - carAvailableAtStart;
+            distToStart += ride.s - carAvailableAtStart;
         }
 
-        return 1000*payoff/timeConsumed;
+        return payoff - distToStart;
     }
 }
