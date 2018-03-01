@@ -28,6 +28,10 @@ public class Car {
             }
         }
         /// update time and position
+        if (rideMax == null){
+            return null;
+        }
+
         timeAvailable += Utils.dist(position, rideMax.pos1);
         if(timeAvailable < rideMax.s) {
             timeAvailable += (rideMax.s - timeAvailable);
@@ -36,7 +40,7 @@ public class Car {
         position = rideMax.pos2;
 
         return rideMax;
-        
+
 
     }
 
