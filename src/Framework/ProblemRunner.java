@@ -2,6 +2,7 @@ package Framework;
 
 import Competition.Data;
 import Competition.ProblemSolver;
+import Genetics.Genome;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,6 +11,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ProblemRunner {
+    public int totalScore = 0;
 
     public ProblemRunner(String[] inputFileNames, String[] outputFileNames, ProblemSolver problemSolver) throws IOException {
         List<File> inputFiles = new ArrayList<>();
@@ -58,7 +60,7 @@ public class ProblemRunner {
         return files;
     }
 
-    private void solve(List<File> inputFiles, List<File> outputFiles, ProblemSolver problemSolver) throws IOException {
+    private int solve(List<File> inputFiles, List<File> outputFiles, ProblemSolver problemSolver) throws IOException {
         if (inputFiles.size() != outputFiles.size()) {
             throw new RuntimeException("Input file list size != output file list size.");
         }
@@ -69,8 +71,15 @@ public class ProblemRunner {
 
             Data data = Data.read(inputFile);
             problemSolver.solve(data);
-            data.write(outputFile);
+            totalScore += data.score;
+
+            if(totalScore >= Genome.maxScoreYet){
+                data.write(outputFile);
+            }
+
         }
+
+        return totalScore;
     }
 
 }

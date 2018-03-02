@@ -33,6 +33,7 @@ public class ProblemSolver2 extends ProblemSolver{
                 if(r != null){
                     data.rides.remove(r);
                     data.assignedRides.get(i).add(r.index);
+                    data.score += cars.get(i).addRide(data, r);
                     done = false;
                 }
             }

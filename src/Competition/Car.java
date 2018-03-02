@@ -32,16 +32,22 @@ public class Car {
             return null;
         }
 
-        timeAvailable += Utils.dist(position, rideMax.pos1);
-        if(timeAvailable < rideMax.s) {
-            timeAvailable += (rideMax.s - timeAvailable);
-        }
-        timeAvailable += rideMax.dist;
-        position = rideMax.pos2;
-
         return rideMax;
+    }
 
+    public int addRide(Data data, Ride ride){
+        int rideDistance = Utils.dist(ride.pos1, ride.pos2);
+        int distanceToStart = Utils.dist(position, ride.pos1);
+        int timeOnStart = timeAvailable + distanceToStart;
 
+        timeAvailable += timeOnStart;
+        if(timeAvailable < ride.s) {
+            timeAvailable = ride.s;
+        }
+        timeAvailable += ride.dist;
+        position = ride.pos2;
+
+        return rideDistance + (timeOnStart<=ride.s ? data.bonus : 0);
     }
 
 }

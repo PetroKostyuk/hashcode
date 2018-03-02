@@ -1,6 +1,7 @@
 package Competition;
 
 import Framework.Logger;
+import Genetics.Genome;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -24,6 +25,8 @@ public class Data {
     public int ridesCount;
     public int bonus;
 
+    public int score = 0;
+
     public void logAll(){
         logger.log("simulationTime: " + simulationTime);
         logger.log("vehiclesCount: " + vehiclesCount);
@@ -40,9 +43,9 @@ public class Data {
         Data data = new Data();
 
         // TODO: during competition
-        System.out.println("Loading data from file:");
-        System.out.println(file);
-        System.out.println();
+//        System.out.println("Loading data from file:");
+//        System.out.println(file);
+//        System.out.println();
 
         sc.nextInt();
         sc.nextInt();

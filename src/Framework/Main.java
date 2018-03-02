@@ -2,8 +2,6 @@ package Framework;
 
 import Competition.ProblemSolver;
 import Competition.ProblemSolver2;
-import Framework.Logger;
-import Framework.ProblemRunner;
 
 import java.io.IOException;
 
@@ -21,7 +19,7 @@ public class Main {
                 "data/out/e_high_bonus.out"
         };
 
-        new ProblemRunner("data/in", "data/out", new ProblemSolver2());
-//        new ProblemRunner(inputFiles, outputFiles, new ProblemSolver2());
+//        new ProblemRunner("data/in", "data/out", new ProblemSolver2());
+        new ProblemRunner(inputFiles, outputFiles, new ProblemSolver2());
     }
 }
